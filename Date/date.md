@@ -114,6 +114,15 @@ console.log(myDate); //Wed Mar 19 2025 12:12:31 GMT+0530 (India Standard Time)
 ```
 
 
+. to convert a date into the the timeStamps we do this
+```
+const my = "2025-02-11"
+const newStamps = Date.parse(my);
+console.log(newStamps); //1739232000000
+
+```
+
+
 
 . UTC(Universal Time Coordinated ) it is the standard time common to every place in the world, and there is the IST, stamds for the indian standard time
 we have this function called getTimezoneOffset(), used to give the difference between the utc and the ist
