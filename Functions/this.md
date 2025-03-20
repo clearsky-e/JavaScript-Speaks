@@ -41,7 +41,7 @@ const person = {
     greet: () => {
         console.log(this.name); // undefined
         console.log(this);      // Window {window: Window, self: Window, document: document, name: '', location: Location, …}
-                                // since the window object do not have the name key it is showing the udefinded, so if we want to access the keys in this condition then we shuld use the normal arrow function
+                                // since the window object do not have the name key it is showing the udefinded, so if we want to access the keys in this condition then we shuld use the normal function
     }
 };
 person.greet(); 
@@ -83,3 +83,76 @@ function Person(name, age) {
 ```
 okay first, if we dont use the this keyword here then it wont work the same as it doing right now, since this keyword points to the current instance in the case of cunstructor and 
 avery variable to access it in the constructor function we have to use the this keyword with all the variables
+
+
+
+
+
+
+
+.working with the eventHandlers
+its very simple this keyword if used inside a event handeler within the normal function then it will point to the current element on which it is called but if we use the arrow function then it will point to the global object
+
+example of the normal function inisde a event handelr for the this keyword
+```
+ <button id="btn">this is the button</button>
+
+    <script>
+     document.getElementById('btn').addEventListener('click',function(){
+            console.log(this) // <button id="btn">this is the button</button>
+                                 //we got this the moment we click on the btn
+     })
+    </script>
+```
+
+example of the arrow function for the this keyword in the eventHandler
+```
+<button id="btn">this is the button</button>
+
+    <script>
+     document.getElementById('btn').addEventListener('click',()=>{
+            console.log(this)  // Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+     })
+    </script>
+```
+
+
+
+
+
+
+
+
+
+.this in setTimeout and setInterval
+this keyword if use in the setInterval or setTimeout with the normal function then it will point to the global object and if it is used with the arraow function then it will work perfectly and point to the current function instance
+with example it is very easy to understand this
+
+example with the normal function
+```
+function check(name) {
+        this.name = name;
+        setTimeout(function () {
+          console.log(this.name); //after 2 sec print undefined
+          console.log(this);  // after 2 seconds , Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+
+        }, 2000);
+      }
+
+      const a = new check("saksham");
+
+```
+
+example with the arraow function
+```
+function check(name) {
+        this.name = name;
+        setTimeout(()=> {
+          console.log(this.name);  //after 2 seconds. saksham
+          console.log(this);        // after 2 seconds, check {name: 'saksham'}
+
+        }, 2000);
+      }
+   
+      const a = new check("saksham");
+```
