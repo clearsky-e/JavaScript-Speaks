@@ -1,5 +1,21 @@
 here we will discuss various concepts about the functions 
 
+. Arguments and Parameter
+in functions the arguments are the actual value we use when we call a function
+```
+greet("Alice");  // "Alice" is an argument
+```
+
+the parameter are the vales a function receives in its declaaration
+```
+function greet(name) {  // "name" is a parameter
+  console.log("Hello, " + name);
+}
+
+```
+
+
+
 . function statement
 function statement is the function declaration
 example: here we have a simple function, this is called teh function statement
@@ -29,6 +45,50 @@ const greet = function() {
 greet(); // Output: Hello!
 ```
 In this example, the function is anonymous because it doesn't have a name, but it's assigned to the variable greet, and you can call it using greet()
+
+
+
+
+
+
+
+
+
+. Callback 
+the callbacks are the function send to the another functions as a argument
+```
+
+function fetchData(callback) {
+  setTimeout(() => {
+    console.log('Data fetched!');
+    callback();  // Calls the callback once data is fetched
+  }, 2000);
+}
+
+function displayMessage() {
+  console.log('Displaying message after fetching data');
+}
+
+fetchData(displayMessage);
+```
+
+the main purpose of using the callbacks are simple, first they mostly used in the asynchronous programming means when we are fetching the data or doing a task asyncronously, so at this point we just want to send a function as set of all task we want to tell, it should be done in the asynhronous function , that this function should run 
+
+CALLBACK HELL
+Callback hell happens when you have too many nested callbacks in asynchronous code, making it difficult to read and maintain.
+You can avoid callback hell by using Promises or async/await, which allow you to manage asynchronous code in a more linear and readable way.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
