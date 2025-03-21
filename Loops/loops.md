@@ -32,6 +32,18 @@ and here we are gonna learn the for-in , for-of and forEach
 
 ```
 
+also remember that, for-of only works on iterables (arrays, strings, maps, sets).
+but if we have to use the for-of with the objects, then we will use the Object.value() method so that we will get the values only from the object so that it will act as the iterable
+```
+const obj = {"name":"Aakash", "age":24, "company":"asionex"}
+
+for(let va of Object.values(obj)){
+console.log(va);
+}
+
+
+```
+
 
 .forEach, thsi is specially made for the array and it accept the callack function which will be applied on the each element, 
 in this callback we wwill send the element of the array and the index also
@@ -46,3 +58,22 @@ in this callback we wwill send the element of the array and the index also
 ```
 rememebr that forEach is a function that iterates not a proper loop
 so here we cant use the break inside this
+
+also the forEach dont return anything it just iterate and perform the callback function
+```
+const arr = [5, 10, 15];
+
+const newArr = arr.forEach((num) => num * 2);
+
+console.log(newArr); //undefined
+```
+
+so if we want to ger back an array then use the other array methods just like map
+
+```
+const arr = [5, 10, 15];
+
+const newArr = arr.map((num) => num * 2);
+
+console.log(newArr);  //[10, 20, 30]
+```
