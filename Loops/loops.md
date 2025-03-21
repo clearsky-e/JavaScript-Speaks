@@ -44,3 +44,5 @@ in this callback we wwill send the element of the array and the index also
       });
 
 ```
+rememebr that forEach is a function that iterates not a proper loop
+so here we cant use the break inside this
