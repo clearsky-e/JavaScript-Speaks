@@ -47,4 +47,66 @@ const ab = arr.splice(1,2,12,13,14);
 console.log(ab); // [ 2, 3 ]
 console.log(arr); // 
 ```
-to be continued
+
+
+
+4. fill()
+   the fill method is used to fill the array with the new value and it accepts the staarting and the end index also, these both start and end index are optional, if not given the start and end index then it will fill the whole array
+   syntax
+```
+array.fill(value, start, end);
+```
+example
+```
+let arr = [1, 2, 3, 4, 5];
+arr.fill(0, 2, 4);  // Filling index 2 to 4 with 0
+console.log(arr);  // Output: [1, 2, 0, 0, 5]
+
+```
+
+
+
+5. findIndex()
+   it return the index of the first element that satisfy the given callback function, If no element found then it return the -1
+syntax
+```
+array.findIndex(callback);
+```
+example
+```
+const arr= [1,2,3,4,5,6]
+const getIndex = arr.findIndex((num)=> num>5);
+console.log(getIndex," this is the Index of the element which is greater than 5");
+```
+
+6. flat()
+   with this method if an array have arrays eleemnt inside it, then it will just make the array flatterd means make it like the simple one array and it takes the depth also inside it, means if there are the arrays like the array inside array and tehn one more means there will be three array liek the nested tehn we can give the dpth 3 and then it will mak the array by going the depth till 3, by default it is 1, this method return the new flat array it does not change the old array
+   syntax:
+```
+array.flat(depth);
+```
+example
+```
+const arr= [1,[2,3],4,[5,[6,7]]]
+
+const newar = arr.flat()
+const newar1 = arr.flat(2)
+
+console.log(newar)   // [ 1, 2, 3, 4, 5, [ 6, 7 ] ]
+console.log(newar1);   // [  1, 2, 3, 4, 5, 6, 7]
+```
+
+
+7. reverse()
+   It reverse the elements of the array, It does not return a new array, It changes the original array
+   example
+```
+const arr= [1,2,3,4,5,6,7]
+
+arr.reverse();
+console.log(arr);
+```
+
+
+
+to be continue the sort is still pending and tehn ready for te questions and asnwers
