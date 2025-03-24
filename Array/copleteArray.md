@@ -107,6 +107,43 @@ arr.reverse();
 console.log(arr);
 ```
 
+8. sort()
+   this method is used to sort the array ion the assending order, and it takes the callback function to let the user provide its own sorting
+```
+arrayName.sort(); //default way
+
+arrayName.sort((a,b)=> a-b );
+```
+   this default case when no function passed to this method then it will sort the arryy but it will sort in a way that it will convert the numbers to the string and sorted in UTF-16 code unit order. This means the number elements in the array will not be sort in a proper way, for example;
+```
+  const arr = [10,4,2,8,6,7,9,1,3,5];
+        arr.sort();
+        console.log(arr); // [1, 10, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
+so to avoid this we have this callback function
+```
+        const arr = [10,4,2,8,6,7,9,1,3,5];
+        arr.sort((a,b)=>a-b);
+        console.log(arr);  //(10) [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+```
+
+and to make it like the decending we can simply do this b-a
+
+when sirting an array then we dont need the callback function we can do this withthe defailt function
+
+```
+let fruits = ['banana', 'apple', 'orange', 'mango'];
+fruits.sort();
+console.log(fruits);  // Output: ['apple', 'banana', 'mango', 'orange']
+
+```
+
+so byDefault the sort method is case sensitive and it takes the capital latter before teh small letter for instance we we have [apple, Bannana] then after sort it will take the Banana first and then apple, to make this insensitve we can do this
+```
+      let fruits = ["Banana", "apple", "Orange", "mango"];
+      fruits.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+      console.log(fruits); //(4) ['apple', 'Banana', 'mango', 'Orange']
+```
 
 
-to be continue the sort is still pending and tehn ready for te questions and asnwers
